@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include <ctime>
 using namespace std;
 // E=MC^{2}
 
@@ -230,6 +231,7 @@ int main()
 }
 */
 
+/*
 // stuctures
 int main()
 {
@@ -248,22 +250,312 @@ int main()
     
 }
 
+*/
+
+/*
 
 int main()
 {
     struct student {
         string name;
         int age;
-        char grade;
     };
 
     student s1;
     s1.name = "Liam";
     s1.age = 35;
-    // s1.grade = "A";
+}
+*/
+
+
+
+
+/*
+// Loops through a set of enums 
+enum sessions{
+    PRACTICE = 0,
+    QUALI,
+    RACE,
+    DONE
+};
+
+int main()
+{
+    enum sessions USGP = PRACTICE;
+
+    while (USGP != DONE)
+    {
+        switch (USGP)
+        {
+            case 0:
+                cout << "Practice\n";
+                USGP = QUALI;
+                break;
+            case 1:
+                cout << "Quali\n";
+                USGP = RACE;
+                break;
+            case 2:
+                cout << "Race\n";
+                USGP = DONE;
+                break;
+        }
+    }
+}
+*/
+
+
+
+/*
+// Aliases for variables & Memory addresses/ references
+
+int main()
+{
+    double pi = 3.142;
+    double &circleconstant = pi;
+    cout << pi << "\n";
+    cout << circleconstant << "\n\n";
+    cout << &pi << "\n"; // Access storage location in hexadecimal 
+    cout << &circleconstant; //Storage location of a variable is same as that of its alias
+}
+*/
+
+
+/*
+
+// Pointers
+int main()
+{
+    string pi = "3.142";
+    string* pointer = &pi;
+
+    cout << pi << "\n";
+    cout << &pi << "\n"; // Access the memory address using a reference
+    cout << pointer << "\n"; // Access the memory address using a pointer
+    cout << *pointer; // Access the value of the variable stored at this address
+
+    string g = "9.81";
+    pointer = &g;
+}
+*/
+
+/*
+// Memory management: sizeof()
+int main()
+{
+    int x, y;
+    double a;
+    
+    cout << sizeof(x) << "\n";
+    cout << sizeof(y) << "\n";
+    cout << sizeof(a) << "\n";
+}
+*/
+
+
+
+/*
+// new and delete keywords
+int main()
+{
+    string *address = new string;
+    cout << "Enter a number: ";
+    cin >> *address;
+    cout << *address << "\n";
+    delete address;
+}
+*/
+
+// // functions: declaration & definition, parameters & arguments, default arguments
+// int myfunct(int prime) // type variableName = DefaultValue
+// {
+//     return prime += 2;
+// }
+
+// int main()
+// {
+//     int num = 9;
+//     cout << myfunct(num) << "\n";
+// }
+
+/*
+int prime(unsigned int number = 1)
+{
+    int factors = 0, range = 1;
+    while (range <= number)
+    {
+        if ( number % range == 0)
+        {
+            factors++;
+        }
+        range++;
+    }
+    cout << factors << "\n";
+    return factors;
 }
 
+int main()
+{
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (prime(num) == 2)
+    {
+        cout << num << " is a prime number";
+    }
+    else{
+        cout << num << " is not a prime number";
+    }
+}
+*/
 
+
+
+/*
+struct GrandPrix {
+    string gp;
+    unsigned int raceNumber;
+    string country;
+};
+
+void F1(GrandPrix Austin)
+{
+    cout << Austin.gp << "; " << Austin.raceNumber << "; " << Austin.country;
+}
+
+int main()
+{
+    GrandPrix Austin = {"AustinGP", 20, "USA"};
+    return 0;
+}
+*/
+
+
+
+
+/*
+// Lambda functions/expressions
+
+int main()
+{
+    auto sum = [](int a, int b){
+        return a + b;
+    };
+
+    cout << sum(5,6) << "\n";
+}
+*/
+
+
+
+
+
+
+/*
+class GrandPrix{
+    public:
+        string name;
+        long int date;
+        bool sprint;
+        int raceNumber;
+    
+    void printer()
+    {
+        cout << "Hello world\n";
+    }
+
+    void reader(); // Declaration
+};
+
+void GrandPrix::reader() // Definition
+{
+    string user_input;
+    cout << "Input: ";
+    cin >> user_input;
+}
+
+int main()
+{
+    GrandPrix Bahrain;
+
+    Bahrain.name ="Bahrain Grand Prix";
+    Bahrain.date = 3242025;
+    Bahrain.raceNumber = 1;
+    Bahrain.sprint = 0;
+    cout << Bahrain.name << " - " << Bahrain.date << " - " << Bahrain.raceNumber << " - " << Bahrain.sprint << '\n';
+    Bahrain.printer();
+    Bahrain.reader();
+
+    return 0;
+}
+*/
+
+/*
+// contructors
+class Dog
+{
+    public:
+        Dog()
+        {
+            cout << "I am a dawg";
+        };
+        void bark()
+        {
+            cout << "Woof";
+        };
+};
+
+int main()
+{
+    Dog Chihuahua;
+
+    Chihuahua.bark();
+}
+*/
+
+
+
+/*
+class Chess_player
+{
+    public:
+        Chess_player()
+        {
+            cout << "Chess.com\tWelcome to chess.com\n";
+        };
+        bool kingInCheck;
+        unsigned int MoveNumber;
+        signed int pieceTrades;
+};
+
+int main()
+{
+    Chess_player White;
+
+    White.kingInCheck = 0;
+    White.MoveNumber = 0;
+    White.pieceTrades = 0;
+}
+
+*/
+
+
+
+/*
+// Templates
+template <typename T>
+T add(T a, T b)
+{
+    return a + b;
+}
+
+int main()
+{
+    cout << add<int>(4,6)<< "\n";
+    cout << add<double>(4.6,6.0)<< "\n";
+    cout << add<string>("4","6")<< "\n";
+}
+*/
 
 
 
